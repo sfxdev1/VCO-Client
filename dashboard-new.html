@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashboard">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-websocket/dist/angular-websocket.min.js"></script>
+    <script src="/js/dashboard-new.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="stylesheet" href="/bower_components/materialize/bin/materialize.css">
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBLICugAa100oIRcvy6nxhxHB_ZgmTs8fE",
+    authDomain: "vc-online.firebaseapp.com",
+    databaseURL: "https://vc-online.firebaseio.com",
+    storageBucket: "vc-online.appspot.com",
+    messagingSenderId: "348897807693"
+    };
+    firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <div class="userView">
+            <div class="background blue">
+
+            </div>
+            <a href="#!user"><img class="circle" src=" " id="user"></a>
+            <a href="#!name"><span class="white-text name" id="name"></span></a>
+            <a href="#!email"><span class="white-text email" id="email"></span></a>
+        </div>
+    </li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+<main>
+    <div class="row">
+        <div class="col s8  offset-s3 ">
+            <h4>Public Rounds</h4>
+            <table class="striped" ng-controller="roundCtrl">
+                <thead>
+                <tr>
+                    <th data-field="id">Round ID</th>
+                    <th data-field="name">Players</th>
+                    <th data-field="price">Join</th>
+                </tr>
+                </thead>
+
+                <tbody id="rounds">
+                <tr ng-repeat="round in data">
+                    <td>{{ round.id }}</td>
+                    <td>{{ round.players }}/4</td>
+                    <td><a class="waves-effect waves-light btn" ng-click="join(round.id)">join</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>

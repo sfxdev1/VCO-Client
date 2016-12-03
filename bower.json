@@ -1,0 +1,23 @@
+{
+  "name": "public",
+  "authors": [
+    "sfxdev <sfx.coding@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angularfire": "^2.1.0",
+    "angular-websocket": "^2.0.0"
+  }
+}
