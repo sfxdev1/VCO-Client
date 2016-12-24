@@ -9,4 +9,5 @@ window.onload = function () {
 	var stage = new PIXI.Container();
 
 	renderer.render(stage);
+
 }
